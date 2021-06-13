@@ -1,0 +1,107 @@
+\documentclass[master]{NTHUthesis}
+\usepackage[utf8]{inputenc}
+
+%%% Customization  %%%
+\usepackage{zhlipsum, lipsum}   % dummy text
+\usepackage{graphicx}           % figures
+\usepackage{booktabs}           % tables
+\usepackage[ruled]{algorithm2e} % algorithms, list of algorithms
+\usepackage{cite}               % bibliography
+
+%%% Necessary %%%
+\input{thesis_info}
+
+\begin{document}
+
+\makecover
+
+\pagenumbering{Roman}
+
+%%% Necessary %%%
+\begin{abstractZH}
+\input{contents/abstractZH}
+\end{abstractZH}
+
+%%% Optional %%%
+\begin{acknowledgementsZH}
+\input{contents/acknowledgementsZH}
+\end{acknowledgementsZH}
+
+%%% Necessary %%%
+\begin{abstractEN}
+\input{contents/abstractEN}
+\end{abstractEN}
+
+%%% Optional %%%
+\begin{acknowledgementsEN}
+\input{contents/acknowledgementsEN}
+\end{acknowledgementsEN}
+
+%%% Necessary %%%
+\maketoc
+
+%%% Optional %%%
+\phantomsection
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\clearpage
+
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\lipsum[1-3]
+\begin{table}[t]
+    \centering
+    \begin{tabular}{ c | c c }
+    \toprule
+     cell1 & cell2 & cell3 \\
+    \midrule
+     cell4 & cell5 & cell6 \\  
+     cell7 & cell8 & cell9 \\
+    \bottomrule
+    \end{tabular}
+    \caption{An example table}
+    \label{tab:my_label}
+\end{table}
+
+\chapter{Section Title}
+\lipsum[1-3]
+\begin{figure}
+    \centering
+    \includegraphics[width=.6\linewidth]{example-image-a}
+    \caption{An example figure.}
+    \label{fig:example-a}
+\end{figure}
+
+\section{Section Title}
+\lipsum[4-5]
+
+\subsection{Subsection Title}
+\lipsum[6]
+
+\chapter{Methodology}
+\lipsum[1-3]
+\begin{algorithm}[t]
+\SetAlgoLined
+\KwResult{Write here the result }
+ initialization\;
+ \While{While condition}{
+  instructions\;
+  \eIf{condition}{
+   instructions1\;
+   instructions2\;
+   }{
+   instructions3\;
+  }
+ }
+ \caption{How to write algorithms}
+\end{algorithm}
+
+\chapter{Related Works}
+
+This is a dummy sentence~\cite{Alpher02}. This is a dummy sentence~\cite{Alpher03}. This is a dummy sentence~\cite{Alpher04}. A dummy Text\footnote{A dummy footnote.}.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
