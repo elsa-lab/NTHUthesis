@@ -87,35 +87,18 @@
     \clearpage
 }
 
+\newcommand{\makeenv}[3]{
+    \newenvironment{#1}{
+        \phantomsection
+        \section*{\centerline{#2}}
+        \addcontentsline{toc}{chapter}{#3}
+    }{
+        \clearpage
+    }
+}
+
 % Customized environments
-\newenvironment{abstractZH}{
-    \phantomsection
-    \section*{\centerline{摘要}}
-    \addcontentsline{toc}{chapter}{Abstract (Chinese)}
-}{
-    \clearpage
-}
-
-\newenvironment{acknowledgementsZH}{
-    \phantomsection
-    \section*{\centerline{致謝}}
-    \addcontentsline{toc}{chapter}{Acknowledgements (Chinese)}
-}{
-    \clearpage
-}
-
-\newenvironment{abstractEN}{
-    \phantomsection
-    \section*{\centerline{Abstract}}
-    \addcontentsline{toc}{chapter}{Abstract}
-}{
-    \clearpage
-}
-
-\newenvironment{acknowledgementsEN}{
-    \phantomsection
-    \section*{\centerline{Acknowledgements}}
-    \addcontentsline{toc}{chapter}{Acknowledgements}
-}{
-    \clearpage
-}
+\makeenv{abstractZH}{摘要}{Abstract (Chinese)}
+\makeenv{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
+\makeenv{abstractEN}{Abstract}{Abstract}
+\makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
