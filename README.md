@@ -10,16 +10,16 @@ There are two class options that can be used to control the behavior of NTHUthes
 \documentclass[master]{NTHUthesis}
 ```
 
-### `master`, `phd`
+### `master`, `doctor`
 
-NTHUthesis offers two modes for typesetting theses. The `master` mode will produce theses for a master's degree. On the other hand, the `phd` mode will produce doctoral theses.
+NTHUthesis offers two modes for typesetting theses. The `master` mode will produce theses for a master's degree. On the other hand, the `doctor` mode will produce doctoral theses.
 
 ### `nowatermark`
 
 By default, NTHUthesis produces theses with watermarking. However, the watermark can be omitted by specifying the `nowatermark` option. For example,
 
 ```latex
-\documentclass[phd,nowatermark]{NTHUthesis}
+\documentclass[doctor,nowatermark]{NTHUthesis}
 ```
 
 ## Provided Commands

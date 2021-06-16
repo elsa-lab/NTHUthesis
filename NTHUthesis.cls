@@ -15,7 +15,7 @@
 
 % Options
 \DeclareOption{master}{\gdef\@degreeZH{碩}}
-\DeclareOption{phd}{\gdef\@degreeZH{博}}
+\DeclareOption{doctor}{\gdef\@degreeZH{博}}
 \DeclareOption{nowatermark}{\gdef\nowatermark{1}}
 \ProcessOptions\relax
 
