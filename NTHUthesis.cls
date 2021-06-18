@@ -35,10 +35,6 @@
 % Default spacing
 \setstretch{1.8}
 
-% Supporting Chinese characters
-\AtBeginDocument{\begin{CJK*}{UTF8}{bkai}}
-\AtEndDocument{\end{CJK*}}
-
 % Declared variables
 \newcommand{\titleZH}[1]{\gdef\@titleZH{#1}}
 \newcommand{\titleEN}[1]{\gdef\@titleEN{#1}}
@@ -54,6 +50,7 @@
 % Customized commands
 \newcommand{\makecover}{
     \begin{titlepage}
+    \begin{CJK*}{UTF8}{bkai}
     \begin{center}
     \begin{spacing}{2.5}
         \Huge
@@ -76,6 +73,7 @@
     中~~華~~民~~國~~\zhdigits{\@yearZH}~~年~~\zhdigits{\@monthZH}~~月
     \end{spacing}
     \end{center}
+    \end{CJK*}
     \end{titlepage}
 }
 
@@ -97,8 +95,20 @@
     }
 }
 
+\newcommand{\makeenvzh}[3]{
+    \newenvironment{#1}{
+        \begin{CJK*}{UTF8}{bkai}
+        \phantomsection
+        \section*{\centerline{#2}}
+        \addcontentsline{toc}{chapter}{#3}
+    }{
+        \clearpage
+        \end{CJK*}
+    }
+}
+
 % Customized environments
-\makeenv{abstractZH}{摘要}{Abstract (Chinese)}
-\makeenv{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
+\makeenvzh{abstractZH}{摘要}{Abstract (Chinese)}
+\makeenvzh{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
 \makeenv{abstractEN}{Abstract}{Abstract}
 \makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
