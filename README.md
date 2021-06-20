@@ -1,6 +1,9 @@
-# How to Use the NTHUthesis LaTeX Class
+# The NTHUthesis LaTeX Class
 
 This README describes how to use the NTHUthesis class with LaTeX to produce high quality typeset theses that are suitable for submission to National Tsing Hua University (NTHU).
+
+|![cover](https://i.imgur.com/XAqUXD9.png)|![chinese-abstract](https://i.imgur.com/HMlJhHu.png)|![english-abstract](https://i.imgur.com/TRXFFIa.png)|![table-of-contents](https://i.imgur.com/4ACrSq0.png)
+|---|---|---|---
 
 ## Class Options
 
