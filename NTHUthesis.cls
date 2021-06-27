@@ -25,7 +25,7 @@
         \AtBeginShipoutAddToBox{
             \begin{tikzpicture}[overlay,remember picture]
             \node[opacity=0.5] at (current page.center){
-                \includegraphics{nthu-logo.pdf}
+                \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
             };
             \end{tikzpicture}
         }
@@ -49,9 +49,9 @@
 
 % Customized commands
 \newcommand{\makecover}{
-    \begin{titlepage}
-    \begin{CJK*}{UTF8}{bkai}
+\begin{titlepage}
     \begin{center}
+    \begin{CJK*}{UTF8}{bkai}
     \begin{spacing}{2.5}
         \Huge
         國~~立~~清~~華~~大~~學\\
@@ -63,7 +63,7 @@
     \@titleEN
     \vfill
     \Large
-    \begin{tabular}{@{}l@{}}
+    \begin{tabular}{l}
         系別：\@instituteZH\\
         學號：\@studentID\\
         研\hspace{0.3cm}究\hspace{0.3cm}生：\@studentZH~(\@studentEN)\\
@@ -72,9 +72,9 @@
     \vspace{1.5\baselineskip}
     中~~華~~民~~國~~\zhdigits{\@yearZH}~~年~~\zhdigits{\@monthZH}~~月
     \end{spacing}
-    \end{center}
     \end{CJK*}
-    \end{titlepage}
+    \end{center}
+\end{titlepage}
 }
 
 \newcommand{\maketoc}{
@@ -95,7 +95,7 @@
     }
 }
 
-\newcommand{\makeenvzh}[3]{
+\newcommand{\makeenvZH}[3]{
     \newenvironment{#1}{
         \begin{CJK*}{UTF8}{bkai}
         \phantomsection
@@ -108,7 +108,7 @@
 }
 
 % Customized environments
-\makeenvzh{abstractZH}{摘要}{Abstract (Chinese)}
-\makeenvzh{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
+\makeenvZH{abstractZH}{摘要}{Abstract (Chinese)}
+\makeenvZH{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
 \makeenv{abstractEN}{Abstract}{Abstract}
 \makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
