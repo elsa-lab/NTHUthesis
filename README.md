@@ -64,5 +64,6 @@ This is a template for typesetting the abstract of the main manuscript. One can 
 
 ## Reference
 
+- [View this project on Overleaf](https://www.overleaf.com/latex/templates/national-tsing-hua-university-nthu-thesis-template/yqdhswpwsqrd)
 - [View this project on ELSA LaTeX](https://elsa-latex.cs.nthu.edu.tw/read/zqsbsnzfrznr)
 - [國立清華大學-教務註冊組-碩博士畢業相關規定](http://registra.site.nthu.edu.tw/p/404-1211-5155.php?Lang=zh-tw)
