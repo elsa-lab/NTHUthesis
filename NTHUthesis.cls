@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{NTHUthesis}[June, 2021 v1.0 Typesetting theses for members of National Tsing Hua University, Hsinchu, Taiwan]
+\ProvidesClass{NTHUthesis}[August, 2022 v1.1 Typesetting theses for members of National Tsing Hua University, Hsinchu, Taiwan]
 
 \LoadClass[a4paper,12pt]{report}
 
@@ -51,7 +51,6 @@
 \newcommand{\makecover}{
 \begin{titlepage}
     \begin{center}
-    \begin{CJK*}{UTF8}{bkai}
     \begin{spacing}{2.5}
         \Huge
         國~~立~~清~~華~~大~~學\\
@@ -72,7 +71,6 @@
     \vspace{1.5\baselineskip}
     中~~華~~民~~國~~\zhdigits{\@yearZH}~~年~~\zhdigits{\@monthZH}~~月
     \end{spacing}
-    \end{CJK*}
     \end{center}
 \end{titlepage}
 }
@@ -97,13 +95,11 @@
 
 \newcommand{\makeenvZH}[3]{
     \newenvironment{#1}{
-        \begin{CJK*}{UTF8}{bkai}
         \phantomsection
         \section*{\centerline{#2}}
         \addcontentsline{toc}{chapter}{#3}
     }{
         \clearpage
-        \end{CJK*}
     }
 }
 
@@ -112,3 +108,7 @@
 \makeenvZH{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
 \makeenv{abstractEN}{Abstract}{Abstract}
 \makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
+
+% Customization for Chinese characters
+\AtBeginDocument{\begin{CJK*}{UTF8}{bkai}}
+\AtEndDocument{\end{CJK*}}
