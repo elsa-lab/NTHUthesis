@@ -112,7 +112,7 @@
     \makeenv{acknowledgementsEN}{Acknowledgements}{外文致謝~(English Acknowledgements)}
 \else
     \makeenvZH{abstractZH}{摘要}{Abstract (Chinese)}
-    \makeenvZH{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
+    \makeenvZH{acknowledgementsZH}{致謝}{中文致謝~(Chinese Acknowledgements)}
     \makeenv{abstractEN}{Abstract}{Abstract}
     \makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
 \fi
