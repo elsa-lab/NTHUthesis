@@ -14,6 +14,7 @@
 \RequirePackage[encoding=UTF8]{zhnumber}
 
 % Options
+\DeclareOption{zhmode}{\gdef\zhmode{1}}
 \DeclareOption{master}{\gdef\@degreeZH{碩}}
 \DeclareOption{doctor}{\gdef\@degreeZH{博}}
 \DeclareOption{nowatermark}{\gdef\nowatermark{1}}
@@ -104,11 +105,29 @@
 }
 
 % Customized environments
-\makeenvZH{abstractZH}{摘要}{Abstract (Chinese)}
-\makeenvZH{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
-\makeenv{abstractEN}{Abstract}{Abstract}
-\makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
+\ifdefined \zhmode
+    \makeenvZH{abstractZH}{摘要}{中文摘要~(Chinese Abstract)}
+    \makeenvZH{acknowledgementsZH}{致謝}{致謝~(Chinese Acknowledgements)}
+    \makeenv{abstractEN}{Abstract}{外文摘要~(English Abstract)}
+    \makeenv{acknowledgementsEN}{Acknowledgements}{外文致謝~(English Acknowledgements)}
+\else
+    \makeenvZH{abstractZH}{摘要}{Abstract (Chinese)}
+    \makeenvZH{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
+    \makeenv{abstractEN}{Abstract}{Abstract}
+    \makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
+\fi
 
 % Customization for Chinese characters
+\setlength{\parindent}{24pt}
 \AtBeginDocument{\begin{CJK*}{UTF8}{bkai}}
 \AtEndDocument{\end{CJK*}}
+\ifdefined \zhmode
+    \RequirePackage{titlesec}
+    \titleformat{\chapter}{\centering\Large\bfseries}{第\zhdigits{\thechapter}章}{12pt}{}
+    \renewcommand{\contentsname}{目次~(Contents)}
+    \renewcommand{\figurename}{圖}
+    \renewcommand{\tablename}{表}
+    \renewcommand{\listfigurename}{圖目錄~(List of Figures)}
+    \renewcommand{\listtablename}{表目錄~(List of Tables)}
+    \renewcommand{\bibname}{參考文獻~(Bibliography)}
+\fi

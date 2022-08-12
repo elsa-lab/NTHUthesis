@@ -41,15 +41,24 @@
 \maketoc
 
 %%% Optional %%%
-\phantomsection
-\listofalgorithms
-\addcontentsline{toc}{chapter}{List of Algorithms}
-\clearpage
+\ifdefined \zhmode \else
+    \phantomsection
+    \listofalgorithms
+    \addcontentsline{toc}{chapter}{List of Algorithms}
+    \clearpage
+\fi
 
+%%% Thesis Body %%%
 \pagenumbering{arabic}
 
-\chapter{Introduction}
-\lipsum[1-3]
+\ifdefined \zhmode
+    \chapter{緒論~(Introduction)}
+    \zhlipsum[1-3]
+\else
+    \chapter{Introduction}
+    \lipsum[1-3]
+\fi
+
 \begin{table}[t]
     \centering
     \begin{tabular}{ c | c c }
@@ -60,27 +69,57 @@
      cell7 & cell8 & cell9 \\
     \bottomrule
     \end{tabular}
-    \caption{An example table}
+    \ifdefined \zhmode
+        \caption{範例表格}
+    \else
+        \caption{An example table}
+    \fi
     \label{tab:my_label}
 \end{table}
 
-\chapter{Section Title}
-\lipsum[1-3]
+\ifdefined \zhmode
+    \chapter{章節標題~(Chapter Title)}
+    \zhlipsum[1-3]
+\else
+    \chapter{Chapter Title}
+    \lipsum[1-3]
+\fi
+
 \begin{figure}
     \centering
     \includegraphics[width=.6\linewidth]{example-image-a}
-    \caption{An example figure.}
+    \ifdefined \zhmode
+        \caption{範例圖片}
+    \else
+        \caption{An example figure.}
+    \fi
     \label{fig:example-a}
 \end{figure}
 
-\section{Section Title}
-\lipsum[4-5]
+\ifdefined \zhmode
+    \section{章節標題~(Section Title)}
+    \zhlipsum[4-5]
+\else
+    \section{Section Title}
+    \lipsum[4-5]
+\fi
 
-\subsection{Subsection Title}
-\lipsum[6]
+\ifdefined \zhmode
+    \subsection{小節標題~(Subsection Title)}
+    \zhlipsum[6]
+\else
+    \subsection{Subsection Title}
+    \lipsum[6]
+\fi
 
-\chapter{Methodology}
-\lipsum[1-3]
+\ifdefined \zhmode
+    \chapter{方法~(Methodology)}
+    \zhlipsum[1-3]
+\else
+    \chapter{Methodology}
+    \lipsum[1-3]
+\fi
+
 \begin{algorithm}[t]
 \SetAlgoLined
 \KwResult{Write here the result }
@@ -94,13 +133,24 @@
    instructions3\;
   }
  }
- \caption{How to write algorithms}
+ \ifdefined \zhmode
+    \caption{如何撰寫演算法}
+ \else
+    \caption{How to write algorithms}
+ \fi
 \end{algorithm}
 
-\chapter{Related Works}
+\ifdefined \zhmode
+    \chapter{相關研究~(Related Works)}
+    
+    這是一個句子~\cite{Alpher02}。這是一個句子~\cite{Alpher03}。這是一個句子~\cite{Alpher04}。這是一段文字\footnote{這是一個註腳。}。
+\else
+    \chapter{Related Works}
+    
+    This is a dummy sentence~\cite{Alpher02}. This is a dummy sentence~\cite{Alpher03}. This is a dummy sentence~\cite{Alpher04}. A dummy Text\footnote{A dummy footnote.}.
+\fi
 
-This is a dummy sentence~\cite{Alpher02}. This is a dummy sentence~\cite{Alpher03}. This is a dummy sentence~\cite{Alpher04}. A dummy Text\footnote{A dummy footnote.}.
-
+%%% Necessary %%%
 \bibliographystyle{ieeetr}
 \bibliography{references}
 

@@ -7,7 +7,7 @@ This README describes how to use the NTHUthesis class with LaTeX to produce high
 
 ## Class Options
 
-There are two class options that can be used to control the behavior of NTHUthesis. These are specified in the traditional LaTeX way. For example,
+There are three class options that can be used to control the behavior of NTHUthesis. These are specified in the traditional LaTeX way. For example,
 
 ```latex
 \documentclass[master]{NTHUthesis}
@@ -23,6 +23,14 @@ By default, NTHUthesis produces theses with watermarking. However, the watermark
 
 ```latex
 \documentclass[doctor,nowatermark]{NTHUthesis}
+```
+
+### `zhmode`
+
+NTHUthesis offers an additional mode for typesetting theses in Chinese by specifying the `zhmode` option. For example,
+
+```latex
+\documentclass[master,zhmode]{NTHUthesis}
 ```
 
 ## Provided Commands
