@@ -70,6 +70,26 @@ This is a template for typesetting the cover without watermarking. One can acces
 
 This is a template for typesetting the abstract of the main manuscript. One can access the output of this template through `exmaples/thesis_abstracts.pdf`.
 
+## Known Issue
+
+The following two lines would cause compilation to fail when the package `microtype` is used.
+
+```latex
+\AtBeginDocument{\begin{CJK*}{UTF8}{bkai}}
+\AtEndDocument{\end{CJK*}}
+```
+
+Please comment out them from `NTHUthesis.cls` and manually add them after `\begin{document}` and before `\end{document}` to resolve the issue. For example,
+
+```latex
+...
+\begin{document}
+\begin{CJK*}{UTF8}{bkai}
+...
+\end{CJK*}
+\end{document}
+```
+
 ## Reference
 
 - [View this project on Overleaf](https://www.overleaf.com/latex/templates/national-tsing-hua-university-nthu-thesis-template/yqdhswpwsqrd)
