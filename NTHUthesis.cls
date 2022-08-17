@@ -70,7 +70,7 @@
         指導教授：\@advisorZH~(\@advisorEN)
     \end{tabular}\\
     \vspace{1.5\baselineskip}
-    中~~華~~民~~國~~\zhdigits{\@yearZH}~~年~~\zhdigits{\@monthZH}~~月
+    中~~華~~民~~國~~\zhdigits{\@yearZH}~~年~~\zhnumber{\@monthZH}~~月
     \end{spacing}
     \end{center}
 \end{titlepage}
@@ -107,12 +107,12 @@
 % Customized environments
 \ifdefined \zhmode
     \makeenvZH{abstractZH}{摘要}{中文摘要~(Chinese Abstract)}
-    \makeenvZH{acknowledgementsZH}{致謝}{致謝~(Chinese Acknowledgements)}
-    \makeenv{abstractEN}{Abstract}{外文摘要~(English Abstract)}
-    \makeenv{acknowledgementsEN}{Acknowledgements}{外文致謝~(English Acknowledgements)}
+    \makeenvZH{acknowledgementsZH}{致謝}{中文致謝~(Chinese Acknowledgements)}
+    \makeenv{abstractEN}{Abstract}{英文文摘要~(English Abstract)}
+    \makeenv{acknowledgementsEN}{Acknowledgements}{英文文致謝~(English Acknowledgements)}
 \else
     \makeenvZH{abstractZH}{摘要}{Abstract (Chinese)}
-    \makeenvZH{acknowledgementsZH}{致謝}{中文致謝~(Chinese Acknowledgements)}
+    \makeenvZH{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
     \makeenv{abstractEN}{Abstract}{Abstract}
     \makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
 \fi
@@ -122,6 +122,7 @@
 \AtBeginDocument{\begin{CJK*}{UTF8}{bkai}}
 \AtEndDocument{\end{CJK*}}
 \ifdefined \zhmode
+    \RequirePackage{refcount}
     \RequirePackage{titlesec}
     \titleformat{\chapter}{\centering\Large\bfseries}{第\zhdigits{\thechapter}章}{12pt}{}
     \renewcommand{\contentsname}{目次~(Contents)}
@@ -130,4 +131,5 @@
     \renewcommand{\listfigurename}{圖目錄~(List of Figures)}
     \renewcommand{\listtablename}{表目錄~(List of Tables)}
     \renewcommand{\bibname}{參考文獻~(Bibliography)}
+    \newcommand{\chref}[1]{\hyperref[#1]{\zhnumber{\getrefnumber{#1}}}}
 \fi
