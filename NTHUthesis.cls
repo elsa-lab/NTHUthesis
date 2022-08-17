@@ -107,12 +107,12 @@
 % Customized environments
 \ifdefined \zhmode
     \makeenvZH{abstractZH}{摘要}{中文摘要~(Chinese Abstract)}
-    \makeenvZH{acknowledgementsZH}{致謝}{中文致謝~(Chinese Acknowledgements)}
+    \makeenvZH{acknowledgementsZH}{誌謝}{中文誌謝~(Chinese Acknowledgements)}
     \makeenv{abstractEN}{Abstract}{英文摘要~(English Abstract)}
-    \makeenv{acknowledgementsEN}{Acknowledgements}{英文致謝~(English Acknowledgements)}
+    \makeenv{acknowledgementsEN}{Acknowledgements}{英文誌謝~(English Acknowledgements)}
 \else
     \makeenvZH{abstractZH}{摘要}{Abstract (Chinese)}
-    \makeenvZH{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
+    \makeenvZH{acknowledgementsZH}{誌謝}{Acknowledgements (Chinese)}
     \makeenv{abstractEN}{Abstract}{Abstract}
     \makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
 \fi
