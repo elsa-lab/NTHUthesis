@@ -94,25 +94,15 @@
     }
 }
 
-\newcommand{\makeenvZH}[3]{
-    \newenvironment{#1}{
-        \phantomsection
-        \section*{\centerline{#2}}
-        \addcontentsline{toc}{chapter}{#3}
-    }{
-        \clearpage
-    }
-}
-
 % Customized environments
 \ifdefined \zhmode
-    \makeenvZH{abstractZH}{摘要}{中文摘要~(Chinese Abstract)}
-    \makeenvZH{acknowledgementsZH}{誌謝}{中文誌謝~(Chinese Acknowledgements)}
+    \makeenv{abstractZH}{摘要}{中文摘要~(Chinese Abstract)}
+    \makeenv{acknowledgementsZH}{誌謝}{中文誌謝~(Chinese Acknowledgements)}
     \makeenv{abstractEN}{Abstract}{英文摘要~(English Abstract)}
     \makeenv{acknowledgementsEN}{Acknowledgements}{英文誌謝~(English Acknowledgements)}
 \else
-    \makeenvZH{abstractZH}{摘要}{Abstract (Chinese)}
-    \makeenvZH{acknowledgementsZH}{誌謝}{Acknowledgements (Chinese)}
+    \makeenv{abstractZH}{摘要}{Abstract (Chinese)}
+    \makeenv{acknowledgementsZH}{誌謝}{Acknowledgements (Chinese)}
     \makeenv{abstractEN}{Abstract}{Abstract}
     \makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}
 \fi
