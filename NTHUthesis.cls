@@ -108,8 +108,8 @@
 \ifdefined \zhmode
     \makeenvZH{abstractZH}{摘要}{中文摘要~(Chinese Abstract)}
     \makeenvZH{acknowledgementsZH}{致謝}{中文致謝~(Chinese Acknowledgements)}
-    \makeenv{abstractEN}{Abstract}{英文文摘要~(English Abstract)}
-    \makeenv{acknowledgementsEN}{Acknowledgements}{英文文致謝~(English Acknowledgements)}
+    \makeenv{abstractEN}{Abstract}{英文摘要~(English Abstract)}
+    \makeenv{acknowledgementsEN}{Acknowledgements}{英文致謝~(English Acknowledgements)}
 \else
     \makeenvZH{abstractZH}{摘要}{Abstract (Chinese)}
     \makeenvZH{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
