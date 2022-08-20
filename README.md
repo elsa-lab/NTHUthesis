@@ -33,6 +33,15 @@ NTHUthesis offers an additional mode for typesetting theses in Chinese by specif
 \documentclass[master,zhmode]{NTHUthesis}
 ```
 
+When `zhmode` is enabled, a new command `chref` is provided, allowing the user to reference a chapter number in Chinese instead of Arabic. For example,
+
+```latex
+\chapter{chapter title}
+\label{chap:title}
+
+... 第\chref{chap:title}章 ...
+```
+
 ## Provided Commands
 
 - `\makecover`: Create a cover that is suitable for submission to NTHU.
