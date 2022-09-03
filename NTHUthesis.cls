@@ -108,10 +108,10 @@
 \fi
 
 % Customization for Chinese characters
-\setlength{\parindent}{24pt}
 \AtBeginDocument{\begin{CJK*}{UTF8}{bkai}}
 \AtEndDocument{\end{CJK*}}
 \ifdefined \zhmode
+    \setlength{\parindent}{24pt}
     \RequirePackage{refcount}
     \RequirePackage{titlesec}
     \titleformat{\chapter}{\centering\Large\bfseries}{第\zhdigits{\thechapter}章}{12pt}{}
