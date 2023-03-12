@@ -10,7 +10,6 @@
 \RequirePackage{CJKutf8}
 \RequirePackage{tocbibind}
 \RequirePackage{hyperref}
-\RequirePackage{tikz}
 \RequirePackage[encoding=UTF8]{zhnumber}
 
 % Options
@@ -22,15 +21,8 @@
 
 % Watermark of NTHU
 \ifdefined \nowatermark \else
-    \AtBeginShipout{
-        \AtBeginShipoutAddToBox{
-            \begin{tikzpicture}[overlay,remember picture]
-            \node[opacity=0.5] at (current page.center){
-                \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
-            };
-            \end{tikzpicture}
-        }
-    }  
+    \RequirePackage{draftwatermark}
+    \DraftwatermarkOptions{text=\includegraphics{nthu-logo.pdf},angle=0}
 \fi
 
 % Default spacing
