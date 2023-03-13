@@ -23,7 +23,7 @@
 \ifdefined \nowatermark \else
     \RequirePackage{tikz}
     \RequirePackage{draftwatermark}
-    \DraftwatermarkOptions{text=\tikz{\node[opacity=0.5]{\includegraphics{nthu-logo.pdf}};},angle=0}
+    \DraftwatermarkOptions{text=\tikz{\node[opacity=0.5]{\includegraphics[width=.5\paperwidth]{nthu-logo.pdf}};},angle=0}
 \fi
 
 % Default spacing
