@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{NTHUthesis}[August, 2022 v1.1 Typesetting theses for members of National Tsing Hua University, Hsinchu, Taiwan]
+\ProvidesClass{NTHUthesis}[Mar, 2023 v1.2 Typesetting theses for members of National Tsing Hua University, Hsinchu, Taiwan]
 
 \LoadClass[a4paper,12pt]{report}
 
