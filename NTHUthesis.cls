@@ -21,9 +21,9 @@
 
 % Watermark of NTHU
 \ifdefined \nowatermark \else
-    \RequirePackage{tikz}
     \RequirePackage{draftwatermark}
-    \DraftwatermarkOptions{text=\tikz{\node[opacity=0.5]{\includegraphics[width=.5\paperwidth]{nthu-logo.pdf}};},angle=0}
+    \SetWatermarkAngle{0}
+    \SetWatermarkText{\includegraphics[width=.5\paperwidth]{nthu-logo.pdf}}
 \fi
 
 % Default spacing
