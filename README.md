@@ -5,6 +5,20 @@ This README describes how to use the NTHUthesis class with LaTeX to produce high
 |![cover](https://i.imgur.com/XAqUXD9.png)|![chinese-abstract](https://i.imgur.com/HMlJhHu.png)|![english-abstract](https://i.imgur.com/TRXFFIa.png)|![table-of-contents](https://i.imgur.com/4ACrSq0.png)
 |---|---|---|---
 
+## Modifying Watermark Transparency
+
+Change the watermark section to:
+
+```latex
+% Watermark of NTHU
+\usepackage{transparent}
+\ifdefined \nowatermark \else
+    \RequirePackage{draftwatermark}
+    \SetWatermarkAngle{0}
+    \SetWatermarkText{{\transparent{0.4}\includegraphics[width=.5\paperwidth]{nthu-logo.pdf}}}
+\fi
+```
+
 ## Class Options
 
 There are three class options that can be used to control the behavior of NTHUthesis. These are specified in the traditional LaTeX way. For example,
