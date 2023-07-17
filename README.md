@@ -79,7 +79,9 @@ This is a template for typesetting the cover without watermarking. One can acces
 
 This is a template for typesetting the abstract of the main manuscript. One can access the output of this template through `exmaples/thesis_abstracts.pdf`.
 
-## Known Issue
+## Known Issues
+
+### Compilation Failed with `microtype`
 
 The following two lines would cause compilation to fail when the package `microtype` is used.
 
@@ -97,6 +99,31 @@ Please comment out them from `NTHUthesis.cls` and manually add them after `\begi
 ...
 \end{CJK*}
 \end{document}
+```
+
+### Adjusting Watermark Opacity
+
+Please note that the watermark opacity is set to 100% in [博碩士論文上傳說明](https://www.lib.nthu.edu.tw/ETD/downloads/upload.pdf). However, without reducing its opacity, the watermark may be indistinguishable from the foreground text and thus impede reading. After the discussion in the closed issue https://github.com/elsa-lab/NTHUthesis/issues/2, we decided to leave the customization effort to the user who thinks reducing opacity is necessary. One possible modification can be done in `NTHUthesis.cls` as follows.
+
+*Origin*:
+```latex
+% Watermark of NTHU
+\ifdefined \nowatermark \else
+    \RequirePackage{draftwatermark}
+    \SetWatermarkAngle{0}
+    \SetWatermarkText{\includegraphics[width=.5\paperwidth]{nthu-logo.pdf}}
+\fi
+```
+
+*Modification*:
+```latex
+% Watermark of NTHU
+\ifdefined \nowatermark \else
+    \RequirePackage{draftwatermark}
+    \RequirePackage{transparent}
+    \SetWatermarkAngle{0}
+    \SetWatermarkText{\transparent{0.5}\includegraphics[width=.5\paperwidth]{nthu-logo.pdf}}
+\fi
 ```
 
 ## Reference
