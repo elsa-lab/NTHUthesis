@@ -1,3 +1,13 @@
+> [!CAUTION]
+> 
+> This repository has been archived and will no longer be updated.
+> 
+> Maintenance has stopped because an **official version is now provided**.
+> 
+> Please use the official and latest version here:
+> 
+> https://www.lib.nthu.edu.tw/use/thesis_template.html
+
 # The NTHUthesis LaTeX Class
 
 This README describes how to use the NTHUthesis class with LaTeX to produce high quality typeset theses that are suitable for submission to National Tsing Hua University (NTHU).
